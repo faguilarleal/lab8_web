@@ -7,30 +7,12 @@ const meta = {
 
 export default meta
 
+// text, handleClick, bcolor,wd 
 export const Default = {
   args: {
-    text: 'CLICK ME!',
-    onClick: fn(),
-  }
-}
-
-export const HasDefaultWidth = {
-  args: {
     text: '',
-    onClick: fn(),
-  }
-}
-
-export const MoreThan10Chars = {
-  args: {
-    text: 'THIS IS A REALLY LONG TEXT WITH MORE THAN 10 CHARS',
-    onClick: fn(),
-  }
-}
-
-export const HasAToolTip = {
-  args: {
-    text: 'Tooltip',
-    onClick: fn(),
+    handleClick: fn(),
+    bcolor: '',
+    wd: ''
   }
 }

@@ -1,37 +1,18 @@
 import { useState, useEffect } from 'react'
 import './Button.css'
 
-const Button = ({ text, onClick }) => {
+const Button = ({ text, handleClick, bcolor,wd='100px' }) => {
   const [clicked, setclicked] = useState(false)
 
-  let shortText = text?.substring(0 , 10) ?? ''
-
-  if (shortText.length < text?.length ?? 0) {
-    shortText += '...'
-  }
-
-  useEffect(() => {
-    if (clicked) {
-      setTimeout(() => {
-        setclicked(false)
-      }, 500)
-    }
-  }, [clicked])
-
-  const handleClick = async () => {
-    if (clicked) {
-      return
-    }
-
-    setclicked(true)
-    await onClick()
-    setclicked(false)
-  }
-
+ 
   return (
-    <button className="button" onClick={handleClick} title={text}>
-      {shortText}
-    </button>
+    <div className='button-container'>
+        <button className="btn" onClick={handleClick}
+        style={{backgroundColor: bcolor, width: wd}} >
+            {text}
+        </button>
+    </div>
+    
   )
 }
 
