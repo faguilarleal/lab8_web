@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
+const Button = ({ text, buttonClick, bcolor='',hcolor ='' }) => {
   const [hover, setHover] = useState(false)
   const [click, setClick] = useState(false)
 
@@ -8,19 +8,17 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
   const handleKeyDown = (e) => {
     if ((e.key === text)||(e.key === 'Enter' && text === '=')||(e.key === 'Backspace' && text === 'Clr')){
       setClick(true)
-      buttonClick(text)
-      console.log('click2', text)
-    }
+      }
   }
 
   const handleClick = () => {
-    console.log('click tecla', text)
-    buttonClick(text)
+    setClick(true)
   }
 
-  
+  // esta funcion permite que el hover effect se coloque y quite despues de presionar alguna tecla
   useEffect(() => {
     if(click){
+      buttonClick(text)
       setHover(true)
       setTimeout(() => {
         setClick(false)
@@ -31,7 +29,6 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
   },[click])
 
  
-
   // se agrega un event listener para el keydown
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -39,6 +36,7 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
+
  
   return (
     <div className='button-container'>
@@ -49,7 +47,6 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
         style={{
             backgroundColor: hover ? hcolor : bcolor,
             color: hover ? 'black' : 'white',
-            width: wd
         }}>
             {text}
         </button>

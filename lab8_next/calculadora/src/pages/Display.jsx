@@ -1,6 +1,6 @@
 import React from "react"
 
-function Display({text }) {
+function Display({text}) {
 
 
     return (
