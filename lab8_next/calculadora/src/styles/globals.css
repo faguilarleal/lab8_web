@@ -8,13 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -70,7 +64,7 @@ body {
 /* display */
 .display-container {
   height: 80%;
-  width: 250px;
+  width: 290px;
   border-radius: 10px;
   background-color: #f3f3f3;
   display: flex;
@@ -96,7 +90,6 @@ body {
 .btn{
   width: 90%;
   height: 50px;
-  background-color: #74342B;
   border: 1px solid transparent;
   border-radius: 5px;
   margin: 5px;
@@ -108,7 +101,7 @@ body {
 }
 
 .btn:hover{
-  background-color: #EDDBC2;
+  background-color: #B5BFEF;
 }
 
 /*  */

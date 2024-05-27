@@ -40,6 +40,7 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
         onClick={handleClick}
         style={{
             backgroundColor: hover ? hcolor : bcolor,
+            color: hover ? 'black' : 'white',
             width: wd
         }}>
             {text}
