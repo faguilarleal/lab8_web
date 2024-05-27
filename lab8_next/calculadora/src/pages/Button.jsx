@@ -14,14 +14,23 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
   }
 
   const handleClick = () => {
-    console.log('click', text)
+    console.log('click tecla', text)
     buttonClick(text)
   }
 
-  const handleKeyUp = (e) => {
-    setClick(false)
-  }
+  
+  useEffect(() => {
+    if(click){
+      setHover(true)
+      setTimeout(() => {
+        setClick(false)
+        setHover(false)
+      }, 100);
+    }
 
+  },[click])
+
+ 
 
   // se agrega un event listener para el keydown
   useEffect(() => {
@@ -34,8 +43,6 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
   return (
     <div className='button-container'>
         <button className="btn" 
-        onKeyDown={handleKeyDown}
-        onKeyUp={handleKeyUp}
         onMouseEnter={() => setHover(true)} // simular un hover effect 
         onMouseLeave={() => setHover(false)}
         onClick={handleClick}
