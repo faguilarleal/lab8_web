@@ -1,0 +1,15 @@
+.display-container {
+    height: 45px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: #f3f3f3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .display-text {
+    margin: 0;
+    padding-right: 20px;
+    font-family: "Gill Sans", sans-serif;
+  }

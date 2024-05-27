@@ -1,48 +1,60 @@
-import { fn } from '@storybook/test';
-import { Button } from './Button';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-export default {
-  title: 'Example/Button',
-  component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
-};
+import { fn } from '@storybook/test'
+import Button from './Button'
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
-export const Primary = {
+const meta = {
+  component: Button
+}
+
+export default meta
+
+// default button for the calculator
+export const Default = {
   args: {
-    primary: true,
-    label: 'Button',
-  },
-};
+    text: '',
+    handleClick: fn(),
+    bcolor: ''
+  }
+}
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
-};
+// test for the clr button
+export const ClrButton = {
+    args: {
+        text: 'Clr',
+        handleClick: fn(),
+        bcolor: '#74342B',
+        hcolor: '#FAD0DF',
+        wd: '150px'
+    }
+}
 
-export const Large = {
+// test for the clr button
+export const IgualButton = {
   args: {
-    size: 'large',
-    label: 'Button',
-  },
-};
+      text: '=',
+      handleClick: fn(),
+      bcolor: '#74342B',
+      hcolor: '#FAD0DF',
+    }
 
-export const Small = {
+}
+
+
+// test for the clr button
+export const plusButton = {
   args: {
-    size: 'small',
-    label: 'Button',
-  },
-};
+      text: '+',
+      handleClick: fn(),
+      bcolor: '#FAD0DF',
+  }
+}
+
+// test for the clr button
+export const NumberButton = {
+  args: {
+      text: '3',
+      handleClick: fn(),
+      bcolor: '#FAD0DF',
+  }
+}
+
