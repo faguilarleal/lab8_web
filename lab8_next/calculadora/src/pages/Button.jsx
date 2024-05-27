@@ -1,4 +1,3 @@
-import { use } from 'chai'
 import { useState, useEffect } from 'react'
 
 const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
@@ -9,12 +8,14 @@ const Button = ({ text, buttonClick, bcolor='',hcolor ='',wd='' }) => {
   const handleKeyDown = (e) => {
     if ((e.key === text)||(e.key === 'Enter' && text === '=')||(e.key === 'Backspace' && text === 'Clr')){
       setClick(true)
-      console.log('click', text)
+      buttonClick(text)
+      console.log('click2', text)
     }
   }
 
   const handleClick = () => {
     console.log('click', text)
+    buttonClick(text)
   }
 
   const handleKeyUp = (e) => {
